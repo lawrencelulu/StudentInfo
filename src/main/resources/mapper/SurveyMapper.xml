@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.fuzui.StudentInfo.mapper.SurveyMapper">
+    <!-- 为了返回List，类型而定义的resultMap -->
+    <resultMap type="survey" id="resultListSurvey">
+        <result column="id" property="svid" />
+        <result column="sid" property="sid" />
+        <result column="tid" property="tid" />
+        <result column="Courseclass" property="courseclass" />
+        <result column="feedback" property="feedback" />
+        <result column="reply" property="reply" />
+        <result column="slevel" property="slevel" />
+        <result column="cname" property="cname" />
+        <result column="tname" property="tname" />
+    </resultMap>
+
+    <!-- 添加评论 -->
+    <insert id="insertSurvey" parameterType="String">
+        INSERT INTO survey (sid, Courseclass, feedback, slevel) VALUES (#{sid}, #{courseclass}, #{feedback}, 0)
+	</insert>
+
+    <!-- 更新评论-->
+    <update id="updateSurvey" parameterType="survey">
+        UPDATE survey set reply = #{reply}, tid = #{tid} WHERE id = #{id};
+    </update>
+	
+	<!-- 查询学生本人总学分 -->
+	<select id="querySurveyByTname" resultType="survey">
+        select * from courseplan_survey_view cv where tname is not null and tname like #{tname} and courseclass = #{courseclass};
+	</select>
+
+<!--    &lt;!&ndash; 根据学号查询本人已修课程 &ndash;&gt;-->
+<!--    <select id="getEedCourseBySid" parameterType="map" resultMap="endCourseResult">-->
+<!--        SELECT g.cid,c.Cname,g.grade,g.credits from grade g INNER JOIN course c on c.cid = g.Cid WHERE g.sid = #{sid}-->
+<!--        &lt;!&ndash; limit #{pageNo} , #{pageSize} &ndash;&gt;-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash; 更新学生成绩 &ndash;&gt;-->
+<!--    <update id="updateGradeByCidSid" parameterType="Grade">-->
+<!--        update grade set grade=#{grade}-->
+<!--        where cid =#{cid} AND sid =#{sid}-->
+<!--    </update>-->
+</mapper>
