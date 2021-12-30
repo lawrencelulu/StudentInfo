@@ -8,7 +8,7 @@
 
 ## 使用技术
 * 工具：IDEA、sequel Pro
-* 环境：JDK1.8、tomcat9.0、mysql8.0
+* 环境：JDK1.8、tomcat9.0、mysql
 * 前端：JavaScript、jQuery、bootstrap4、particles.js
 * 后端：maven、SpringMVC、MyBatis、ajax、mysql读写分离、mybatis分页
 
