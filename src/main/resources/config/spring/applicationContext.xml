@@ -31,17 +31,17 @@
 	<!-- 配置写库 继承abstractDataSource-->
 	<bean id="dataSourceWrite" parent="abstractDataSource">
 		<!-- 基本url、username、password -->
-		<property name="url" value="jdbc:mysql://localhost:3308/selectCourse?serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;autoReconnect=true&amp;allowMultiQueries=true" />
+		<property name="url" value="jdbc:mysql://localhost:3306/selectCourse?serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;autoReconnect=true&amp;allowMultiQueries=true" />
 		<property name="username" value="root" />
-		<property name="password" value="123456" />
+		<property name="password" value="wmlsmile@123" />
 	</bean>
 	
 	<!-- 配置读库 继承abstractDataSource-->
 	<bean id="dataSourceRead" parent="abstractDataSource">
 		<!-- 基本 url、username、password -->
-		<property name="url" value="jdbc:mysql://localhost:3308/selectCourse?serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;autoReconnect=true&amp;allowMultiQueries=true" />
+		<property name="url" value="jdbc:mysql://localhost:3306/selectCourse?serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;autoReconnect=true&amp;allowMultiQueries=true" />
 		<property name="username" value="root" />
-		<property name="password" value="123456" />
+		<property name="password" value="wmlsmile@123" />
 	</bean>
 	
 	<!-- 动态数据源 -->

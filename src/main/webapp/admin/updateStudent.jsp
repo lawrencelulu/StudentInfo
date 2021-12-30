@@ -26,12 +26,20 @@ pageEncoding="UTF-8"%>
                             <input type="text" name="sname" value="${student.sname }" class="form-control"  maxlength="10"></input>
                         </div>
                         <div class="form-group">
+                            <label>年龄</label>
+                            <input type="number" name="sage" value="${student.sage }" class="form-control"></input>
+                        </div>
+                        <div class="form-group">
                             <label>身份证号</label>
                             <input type="text" name="sidcard" value="${student.sidcard }" class="form-control" maxlength="16"></input>
                         </div>
                         <div class="form-group">
-                            <label>年龄</label>
-                            <input type="number" name="sage" value="${student.sage }" class="form-control"></input>
+                            <label>专业</label>
+                            <input type="text" name="sidcard" value="${student.profession }" class="form-control" maxlength="16"></input>
+                        </div>
+                        <div class="form-group">
+                            <label>学院</label>
+                            <input type="text" name="sidcard" value="${student.college }" class="form-control" maxlength="16"></input>
                         </div>
                         <div class="form-group clearfix">
                             <div class="row">

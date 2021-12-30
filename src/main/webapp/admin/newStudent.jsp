@@ -33,6 +33,14 @@ pageEncoding="UTF-8"%>
                             <label>年龄</label>
                             <input type="number" name="sage" class="form-control"></input>
                         </div>
+                        <div class="form-group">
+                            <label>专业</label>
+                            <input type="text" name="profession" class="form-control" maxlength="16"></input>
+                        </div>
+                        <div class="form-group">
+                            <label>学院</label>
+                            <input type="text" name="college" class="form-control" maxlength="16"></input>
+                        </div>
                         <div class="form-group clearfix">
                             <div class="row">
                                 <div class="col-md-12" style="margin-bottom: 16px;">

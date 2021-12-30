@@ -206,6 +206,12 @@ CREATE TABLE survey (
                         CONSTRAINT `survey_ibfk_2` FOREIGN KEY (`tid`) REFERENCES `teacher` (`tid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) Engine=INNODB DEFAULT CHARSET=UTF8;
 
+INSERT INTO `survey` (`id`, `sid`, `tid`, `Courseclass`, `feedback`, `slevel`, `reply`)
+VALUES
+(1,'2018202001','19950018','81203002-001','作业难度比较合适',0,'感谢肯定'),
+(2,'2018202002','19950018','81203002-001','老师和助教也很耐心',0,'感谢肯定'),
+(3,'2018202003','19950018','81203002-001','实验框架较为复杂',1,'根据同学们的建议，简化框架');
+
 create view course_view as select  a.cid, a.cname, a.cscore, a.cprecourse as cpid, b.cname as cpname from course a left join course b on a.cprecourse = b.cid;
 create view course_plan_view as select a.course_plan_id as cpid, a.isComment, a.courseclass, a.cid, b.cname, b.cprecourse as precourse, a.semester, c.tid, c.tname from courseplan a inner join course b on a.cid = b.cid inner join teacher c on a.tid = c.tid;
 create view coruse_plan_sc_view as select isComment, courseclass, cid, cname, semester, GROUP_CONCAT(tname) as tname from course_plan_view group by courseclass, cid, cname, semester, isComment;
